@@ -1,12 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Document</title>
-</head>
-<body>
 
-<h1>PAGE ADD</h1>
-</body>
-</html>
+<div class="container mt-5">
+
+
+  <form [formGroup]="productForm" (ngSubmit)="save()">
+    <label>Name</label>
+    <input type="text" formControlName="name" id="" class="form-control">
+    @if (productForm.get('name')?.invalid && productForm.get('name')?.touched){
+      <span class="text-danger">Le name est obligatoire</span>
+    }
+    <br>
+    <label>Prix</label>
+    <input type="text" formControlName="prixe" id="" class="form-control">
+    <label>Description</label>
+    <input type="text" formControlName="description" id="" class="form-control">
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="this.productForm.invalid">Save</button>
+  </form>
+
+</div>

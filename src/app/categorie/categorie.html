@@ -1,0 +1,25 @@
+<div class="container mt-5">
+
+  <a class="btn btn-success" routerLink="/addCategorie">Add</a>
+  <table class="table table-striped">
+    <tr>
+      <td>ID</td>
+      <td>Libelle</td>
+    </tr>
+
+    @for ( a of tabCat(); track  a.id) {
+      <tr>
+        <td>{{a.id}}</td>
+        <td>{{a.libelle}}</td>
+
+        <td>
+          <button (click)="delete(a.id)" class="btn btn-danger">Delete</button>
+          <button class="btn btn-primary">Update</button>
+        </td>
+      </tr>
+    }
+  </table>
+
+
+
+</div>
